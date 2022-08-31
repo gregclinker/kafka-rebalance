@@ -1,0 +1,15 @@
+.classpath
+.project
+.settings
+.springBeans
+*.ipr
+*.iws
+target
+.idea
+*.iml
+build
+.gradle
+dependency-reduced-pom.xml
+kafka1
+kafka2
+kafka3
