@@ -6,6 +6,6 @@ export KAFKA_SSL_KEYSTORE_LOCATION="/home/greg/work/kafka-heartbeat/secrets/kafk
 export KAFKA_SSL_KEYSTORE_PASSWORD="confluent"
 export KAFKA_SSL_KEY_PASSWORD="confluent"
 export KAFKA_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM=" "
-export REBALANCE_CONFIG="{\"dryrun\":false,\"delay\":3,\"topics\":[\"greg-test1\",\"greg-test2\"]}"
+export REBALANCE_CONFIG="{\"dryrun\":false,\"delay\":5,\"topics\":[\"greg-test1\",\"greg-test2\"]}"
 
 java -jar target/kafka-rebalance-0.1.jar

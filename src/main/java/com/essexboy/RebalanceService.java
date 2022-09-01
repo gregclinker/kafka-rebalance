@@ -55,10 +55,10 @@ public class RebalanceService {
             try {
                 final List<Integer> newReplicas = getRebalanceReplicas(partition.getLeader(), partition.getReplicas());
                 if (CollectionUtils.containsAll(partition.getReplicas(), newReplicas)) {
-                    LOGGER.info("SKIPPING rebalance topic {}, partition {}, already has replicas on both racks {}", topic, partition, partition.getReplicas());
+                    LOGGER.info("SKIPPING rebalance topic {}, partition {}, already has 2 replicas on both racks", topic, partition);
                     processedStats.partitionsRebalanceSkipped++;
                 } else if (config.isDryrun()) {
-                    LOGGER.info("DRYRUN rebalancing topic {}, partition {}, existing replicas={}, new replicas={}", topic, partition, partition.getReplicas(), newReplicas);
+                    LOGGER.info("DRYRUN rebalancing topic {}, partition {}, new replicas={}", topic, partition, newReplicas);
                 } else {
                     LOGGER.info("rebalancing topic {}, partition {}, existing replicas={}, new replicas={}", topic, partition, partition.getReplicas(), newReplicas);
                     partitionReassignment(topic, partition.getId(), newReplicas);
